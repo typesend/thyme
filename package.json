@@ -6,7 +6,6 @@
   },
   "dependencies": {
     "dotenv": "^8.2.0",
-    "esm": "^3.2.25",
     "harvest": "^2.2.5",
     "puppeteer": "^5.5.0",
     "rize": "^0.9.0"
