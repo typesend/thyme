@@ -13,7 +13,7 @@ module.exports = {
     url: process.env.COSTPOINT_LOGIN_URL,
     username: process.env.COSTPOINT_USERNAME,
     password: process.env.COSTPOINT_PASSWORD,
-    system: process.env.COSTPOINT_SYSTEM
+    system: process.env.COSTPOINT_SYSTEM,
   },
   harvest: (new Harvest({
     subdomain: process.env.HARVEST_SUBDOMAIN,
@@ -21,7 +21,7 @@ module.exports = {
     concurrency: 1,
     auth: {
       accessToken: process.env.HARVEST_ACCESS_TOKEN,
-      accountId: process.env.HARVEST_ACCOUNT_ID
-    }
-  }))
+      accountId: process.env.HARVEST_ACCOUNT_ID,
+    },
+  })),
 };

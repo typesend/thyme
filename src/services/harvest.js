@@ -1,16 +1,12 @@
-const harvest = require('../config').harvest;
-
-
+const { harvest } = require('../config');
 
 module.exports = function HarvestService() {
-
-  this.run = function() {
+  this.run = function () {
     harvest.company
       .get()
       .then((response) => {
         const company = response;
-        console.log(company)
+        console.log(company);
       });
   };
-
 };
