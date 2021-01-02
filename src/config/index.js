@@ -1,4 +1,5 @@
 const dotenv = require('dotenv');
+const Harvest = require('harvest').default;
 
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
@@ -14,9 +15,13 @@ module.exports = {
     password: process.env.COSTPOINT_PASSWORD,
     system: process.env.COSTPOINT_SYSTEM
   },
-  harvest: {
-    accessToken: process.env.HARVEST_ACCESS_TOKEN,
-    accountId: process.env.HARVEST_ACCOUNT_ID,
-    subdomain: process.env.HARVEST_SUBDOMAIN
-  }
+  harvest: (new Harvest({
+    subdomain: process.env.HARVEST_SUBDOMAIN,
+    userAgent: process.env.HARVEST_USERAGENT,
+    concurrency: 1,
+    auth: {
+      accessToken: process.env.HARVEST_ACCESS_TOKEN,
+      accountId: process.env.HARVEST_ACCOUNT_ID
+    }
+  }))
 };
